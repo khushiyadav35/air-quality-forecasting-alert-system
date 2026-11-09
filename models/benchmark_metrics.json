@@ -1,0 +1,42 @@
+{
+  "Delhi": {
+    "PyTorch LSTM": {
+      "24h Horizon": {
+        "mae": 15.25,
+        "rmse": 18.87,
+        "mape": 3.6,
+        "r2": 0.6105,
+        "spike_recall": 100.0
+      }
+    },
+    "Prophet / Additive": {
+      "Multi-Day": {
+        "mae": 22.03,
+        "rmse": 27.02,
+        "mape": 5.87,
+        "r2": -0.0893,
+        "spike_recall": 100.0
+      }
+    }
+  },
+  "Lucknow": {
+    "PyTorch LSTM": {
+      "24h Horizon": {
+        "mae": 12.68,
+        "rmse": 15.94,
+        "mape": 3.36,
+        "r2": 0.4914,
+        "spike_recall": 100.0
+      }
+    },
+    "Prophet / Additive": {
+      "Multi-Day": {
+        "mae": 17.95,
+        "rmse": 21.86,
+        "mape": 5.2,
+        "r2": -0.8186,
+        "spike_recall": 100.0
+      }
+    }
+  }
+}
