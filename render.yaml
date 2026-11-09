@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: vayudrishti-aqi-forecast
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "streamlit run app/app.py --server.port 10000 --server.address 0.0.0.0"
+    plan: free
+    region: oregon
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: ALERT_AQI_THRESHOLD
+        value: 201

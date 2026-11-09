@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    container_name: vayudrishti-web
+    ports:
+      - "8501:8501"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN:-}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID:-}
+      - ALERT_SENDER_EMAIL=${ALERT_SENDER_EMAIL:-}
+      - ALERT_EMAIL_PASSWORD=${ALERT_EMAIL_PASSWORD:-}
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    restart: unless-stopped
+
+  alert-daemon:
+    build: .
+    container_name: vayudrishti-alert-daemon
+    entrypoint: ["python", "scripts/run_alert_daemon.py", "--threshold=201"]
+    environment:
+      - PYTHONUNBUFFERED=1
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN:-}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID:-}
+      - ALERT_SENDER_EMAIL=${ALERT_SENDER_EMAIL:-}
+      - ALERT_EMAIL_PASSWORD=${ALERT_EMAIL_PASSWORD:-}
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    restart: unless-stopped
+    depends_on:
+      - web
