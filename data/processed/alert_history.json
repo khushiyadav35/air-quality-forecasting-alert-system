@@ -1,0 +1,30 @@
+[
+  {
+    "timestamp": "2026-11-09T13:23:58.183849",
+    "city": "Delhi",
+    "current_aqi": 342,
+    "category": "Very Poor",
+    "prominent_pollutant": "PM2.5",
+    "forecast_peak_aqi": 388,
+    "reason": "First alert triggered for Delhi: AQI is 342 (Very Poor).",
+    "dispatch_results": {
+      "telegram": {
+        "status": "dry_run_success",
+        "channel": "Telegram",
+        "delivered": true,
+        "message": "<b>\ud83d\udfe3 AIR QUALITY ALERT | DELHI \ud83d\udfe3</b>\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n<b>CPCB NAQI Status:</b> 342 (<b>VERY POOR</b>)\n<b>Primary Hazard:</b> PM2.5\n<b>Sub-Indices:</b> <code>PM25: 342 | PM10: 260 | NO2: 115 | SO2: 45</code>\n\n<b>\ud83d\udcc8 24h\u201372h Forecast Outlook:</b>\n\u2022 Projected Peak: <b>388 AQI</b>\n\u2022 Peak Period: <i>Tomorrow 07:00 AM (Winter Inversion Peak)</i>\n\n<b>\ud83e\ude7a Public Health Advisory:</b>\n<blockquote>Respiratory illness expected on prolonged exposure. Avoid all morning outdoor exertion.</blockquote>\n\n<b>\ud83d\udee1\ufe0f Recommended Precautionary Actions:</b>\n\u2022 Wear certified N95/FFP2 respirators when stepping outdoors.\n\u2022 Seal windows during early morning and late evening inversion hours.\n\u2022 Sensitive individuals (asthma, cardiac, elderly) must avoid outdoor workouts.\n\u2022 Operate indoor HEPA air filtration if available.\n\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\n<i>Broadcasted by Air Quality Forecasting System (@khushiyadav35)</i>",
+        "note": "Configured in local simulation mode. Set TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID in .env for live dispatch."
+      },
+      "email": {
+        "status": "dry_run_success",
+        "channel": "Email",
+        "delivered": true,
+        "recipients": [
+          "public-alert@delhi-lucknow-aqi.gov.in"
+        ],
+        "subject": "\u26a0\ufe0f [AQI ALERT] DELHI Air Quality Reached 342 (VERY POOR)",
+        "note": "Configured in local simulation mode. Set ALERT_SENDER_EMAIL and ALERT_EMAIL_PASSWORD for SMTP dispatch."
+      }
+    }
+  }
+]
